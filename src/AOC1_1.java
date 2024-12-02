@@ -7,7 +7,7 @@ import java.util.List;
 
 public class AOC1_1 {
     public static void main(String[] args) {
-        String filePath = "/Users/srampally/Documents/code/AdventOfCode/src/test/aoc-1.txt";
+        String filePath = "/Users/srampally/Documents/code/aoc2024/src/test/aoc-1.txt";
         List<Integer> dataList1 = new ArrayList<>();
         List<Integer> dataList2 = new ArrayList<>();
 
