@@ -60,8 +60,7 @@ public class AOC3_2 {
               continue;
             }
           }
-          long tempSum = calculateSum(matchedValue);
-          sum += tempSum;
+          sum += calculateSum(matchedValue);
         }
 
       }
