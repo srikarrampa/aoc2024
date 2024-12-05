@@ -40,7 +40,7 @@ public class AOC3_1 {
       System.err.println("Error reading the file: " + e.getMessage());
     }
 
-    System.out.println("Count: " + sum);
+    System.out.println("Sum: " + sum);
 
   }
 

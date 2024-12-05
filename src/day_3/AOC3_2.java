@@ -65,7 +65,7 @@ public class AOC3_2 {
       System.err.println("Error reading the file: " + e.getMessage());
     }
 
-    System.out.println("Count: " + sum);
+    System.out.println("Sum: " + sum);
   }
 
   private static long calculateSum(String matchedValue) {
