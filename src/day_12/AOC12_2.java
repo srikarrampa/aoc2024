@@ -9,7 +9,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 
 public class AOC12_2 {
   public static int[][] DIRS = {{1,0}, {0,-1}, {-1,0}, {0, 1}};
@@ -73,15 +72,16 @@ public class AOC12_2 {
 
     visited[i][j] = true;
 
-    if (!same_plant(i-1,j,c) && !same_plant(i,j+1,c)) angles++;
-    if (!same_plant(i,j+1,c) && !same_plant(i+1,j,c)) angles++;
-    if (!same_plant(i+1,j,c) && !same_plant(i,j-1,c)) angles++;
-    if (!same_plant(i,j-1,c) && !same_plant(i-1,j,c)) angles++;
+    // outside angles
+    if (!samePlant(i-1,j,c) && !samePlant(i,j+1,c)) angles++;
+    if (!samePlant(i,j+1,c) && !samePlant(i+1,j,c)) angles++;
+    if (!samePlant(i+1,j,c) && !samePlant(i,j-1,c)) angles++;
+    if (!samePlant(i,j-1,c) && !samePlant(i-1,j,c)) angles++;
     // inside angles
-    if (same_plant(i-1,j,c) && same_plant(i,j+1,c) && !same_plant(i-1,j+1,c)) angles++;
-    if (same_plant(i,j+1,c) && same_plant(i+1,j,c) && !same_plant(i+1,j+1,c)) angles++;
-    if (same_plant(i+1,j,c) && same_plant(i,j-1,c) && !same_plant(i+1,j-1,c)) angles++;
-    if (same_plant(i,j-1,c) && same_plant(i-1,j,c) && !same_plant(i-1,j-1,c)) angles++;
+    if (samePlant(i-1,j,c) && samePlant(i,j+1,c) && !samePlant(i-1,j+1,c)) angles++;
+    if (samePlant(i,j+1,c) && samePlant(i+1,j,c) && !samePlant(i+1,j+1,c)) angles++;
+    if (samePlant(i+1,j,c) && samePlant(i,j-1,c) && !samePlant(i+1,j-1,c)) angles++;
+    if (samePlant(i,j-1,c) && samePlant(i-1,j,c) && !samePlant(i-1,j-1,c)) angles++;
 
     long right = calculateArea(i, j + 1, input, input[i][j]);
     long left = calculateArea(i, j - 1, input, input[i][j]);
@@ -93,7 +93,7 @@ public class AOC12_2 {
             up;
   }
 
-  private static boolean same_plant(int i, int j, char c) {
+  private static boolean samePlant(int i, int j, char c) {
     return i >= 0 &&
             j >= 0 &&
             i < input.length &&
