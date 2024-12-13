@@ -1,6 +1,3 @@
-/*
- * Copyright (c) 2023 Splunk, Inc. All rights reserved.
- */
 
 package day_10;
 
